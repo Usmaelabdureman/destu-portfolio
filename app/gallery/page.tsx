@@ -5,6 +5,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import Image from "next/image"
 import { useEffect, useState } from "react"
+import { CardSkeleton } from "@/components/CardSkeleton"
 
 // export const metadata: Metadata = {
 //   title: "Gallery - Destu Muktar",
@@ -70,7 +71,11 @@ export default function Gallery() {
       <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {loading ? (
-            <p>Loading...</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {Array.from({ length: 6 }).map((_, index) => (
+                <CardSkeleton key={index} />
+              ))}
+            </div>
           ) : error ? (
             <p>Error: {error}</p>
           ) : (
