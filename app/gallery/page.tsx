@@ -55,8 +55,6 @@ export default function Gallery() {
 
   return (
     <main className="min-h-screen bg-background">
-      <Navigation />
-
       {/* Gallery Header */}
       <section className="pt-20 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/5 to-transparent">
         <div className="max-w-6xl mx-auto">
